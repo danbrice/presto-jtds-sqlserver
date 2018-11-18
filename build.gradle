@@ -50,3 +50,8 @@ dependencies {
     compile "net.sourceforge.jtds:jtds:${jtdsVersion}"
 
 }
+
+task copyToLib(type: Copy) {
+    into "$buildDir/output/lib"
+    from configurations.runtime
+}
