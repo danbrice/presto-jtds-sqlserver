@@ -16,24 +16,27 @@ repositories {
         dirs "lib"
     }
 }
-
-ext.prestoVersion = '0.166'
-ext.airliftVersion = '0.128'
-ext.airliftSliceVersion = '0.21'
-ext.guavaVersion = '18.0'
-ext.guiceVersion = '4.0-beta5'
+// Find the versions for this in https://github.com/prestodb/presto/blob/master/pom.xml and 
+// /opt/presto/lib
+ext.prestoVersion = '0.213'
+ext.airliftVersionUnits = '1.3'
+ext.airliftVersionConfiguration = '0.176'
+ext.airliftSliceVersion = '0.36'
+ext.guavaVersion = '24.1'
+ext.guiceVersion = '4.2.0'
 ext.validationApiVersion = '1.1.0.Final'
-ext.log4jVersion = '1.2.17'
+ext.log4jVersion = '1.7.25'
 ext.javaxInjectVersion = '1'
-ext.jacksonVersion = '2.6.0-rc2'
+ext.jacksonVersion = '2.8.1'
+// Selected jtds version:
 ext.jtdsVersion = '1.3.1'
 
 dependencies {
     compile("com.facebook.presto:presto-base-jdbc:${prestoVersion}")
     compile("com.facebook.presto:presto-spi:${prestoVersion}")
 
-    compile "io.airlift:units:${airliftVersion}"
-    compile "io.airlift:configuration:${airliftVersion}"
+    compile "io.airlift:units:${airliftVersionUnits}"
+    compile "io.airlift:configuration:${airliftVersionConfiguration}"
     compile("io.airlift:slice:${airliftSliceVersion}")
 
     compile "com.google.guava:guava:${guavaVersion}"
