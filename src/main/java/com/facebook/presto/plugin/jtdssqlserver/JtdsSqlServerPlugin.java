@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,14 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.plugin.sqlserver;
+package com.facebook.presto.plugin.jtdssqlserver;
+
+import com.facebook.presto.plugin.jdbc.JdbcPlugin;
 
 /**
- * To get the custom properties to connect to the database. User, password and
- * URL is provided by de BaseJdbcClient is not required. If there is another
- * custom configuration it should be put in here.
+ * Initial class injected into PrestoDB via SPI.
+ * 
+ * @author Marcelo Paes Recg
  *
- * @author Marcelo Paes Rech
  */
-public class SqlServerConfig {
+public class JtdsSqlServerPlugin extends JdbcPlugin {
+
+	/**
+	 * Oracle Plugin Constructor
+	 */
+	public SqlServerPlugin() {
+		//name of the connector and the module implementation
+		super("jtdssqlserver", new SqlServerClientModule());
+	}
 }

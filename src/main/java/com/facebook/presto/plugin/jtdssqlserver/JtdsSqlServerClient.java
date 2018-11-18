@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.plugin.sqlserver;
+package com.facebook.presto.plugin.jtdssqlserver;
 
 import com.facebook.presto.plugin.jdbc.*;
 import com.facebook.presto.spi.PrestoException;
@@ -21,7 +21,7 @@ import com.facebook.presto.spi.type.Type;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import net.sourceforge.jtds.jdbc.Driver;
 import org.apache.log4j.Logger;
 
 import javax.annotation.Nullable;
@@ -43,14 +43,14 @@ import static com.google.common.collect.Iterables.getOnlyElement;
  *
  * @author Marcelo Paes Rech
  */
-public class SqlServerClient extends BaseJdbcClient {
+public class JtdsSqlServerClient extends BaseJdbcClient {
 
     private static final Logger log = Logger.getLogger(SqlServerClient.class);
 
     @Inject
-    public SqlServerClient(JdbcConnectorId connectorId, BaseJdbcConfig config,
-                           SqlServerConfig sqlServerConfig) throws SQLException {
-        super(connectorId, config, "", new SQLServerDriver());
+    public JtdsSqlServerClient(JdbcConnectorId connectorId, BaseJdbcConfig config,
+                           JtdsSqlServerConfig sqlServerConfig) throws SQLException {
+        super(connectorId, config, "", new Driver());
     }
 
     @Override

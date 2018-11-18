@@ -1,1 +1,1 @@
-com.facebook.presto.plugin.sqlserver.SqlServerPlugin
+com.facebook.presto.plugin.jtdssqlserver.JtdsSqlServerPlugin

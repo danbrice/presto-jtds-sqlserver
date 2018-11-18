@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.plugin.sqlserver;
+package com.facebook.presto.plugin.jtdssqlserver;
 
 import com.facebook.presto.plugin.jdbc.BaseJdbcConfig;
 import com.facebook.presto.plugin.jdbc.JdbcClient;
@@ -26,13 +26,13 @@ import static io.airlift.configuration.ConfigBinder.configBinder;
  *
  * @author Marcelo Paes Rech
  */
-public class SqlServerClientModule implements Module {
+public class JtdsSqlServerClientModule implements Module {
 
     @Override
     public void configure(Binder binder) {
-        binder.bind(JdbcClient.class).to(SqlServerClient.class)
+        binder.bind(JdbcClient.class).to(JtdsSqlServerClient.class)
                 .in(Scopes.SINGLETON);
         configBinder(binder).bindConfig(BaseJdbcConfig.class);
-        configBinder(binder).bindConfig(SqlServerConfig.class);
+        configBinder(binder).bindConfig(JtdsSqlServerConfig.class);
     }
 }

@@ -1,10 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'presto-sqlserver'
+group = 'presto-jtdssqlserver'
 version = '0.166'
 
-description = ""
+description = "jtds sql server connector for presto"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -26,6 +26,7 @@ ext.validationApiVersion = '1.1.0.Final'
 ext.log4jVersion = '1.2.17'
 ext.javaxInjectVersion = '1'
 ext.jacksonVersion = '2.6.0-rc2'
+ext.jtdsVersion = '1.3.1'
 
 dependencies {
     compile("com.facebook.presto:presto-base-jdbc:${prestoVersion}")
@@ -45,6 +46,7 @@ dependencies {
     compile("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
 
     compile "log4j:log4j:${log4jVersion}"
+    
+    compile "net.sourceforge.jtds:jtds:${jtdsVersion}"
 
-    compile name: "sqljdbc42"
 }
