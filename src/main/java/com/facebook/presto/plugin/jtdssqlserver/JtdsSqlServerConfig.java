@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.plugin.Jtdssqlserver;
+package com.facebook.presto.plugin.jtdssqlserver;
 
 /**
  * To get the custom properties to connect to the database. User, password and

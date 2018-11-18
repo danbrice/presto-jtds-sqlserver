@@ -29,8 +29,8 @@ public class JtdsSqlServerPlugin extends JdbcPlugin {
 	/**
 	 * Oracle Plugin Constructor
 	 */
-	public SqlServerPlugin() {
+	public JtdsSqlServerPlugin() {
 		//name of the connector and the module implementation
-		super("jtdssqlserver", new SqlServerClientModule());
+		super("jtdssqlserver", new JtdsSqlServerClientModule());
 	}
 }

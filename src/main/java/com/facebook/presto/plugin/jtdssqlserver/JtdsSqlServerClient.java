@@ -45,7 +45,7 @@ import static com.google.common.collect.Iterables.getOnlyElement;
  */
 public class JtdsSqlServerClient extends BaseJdbcClient {
 
-    private static final Logger log = Logger.getLogger(SqlServerClient.class);
+    private static final Logger log = Logger.getLogger(JtdsSqlServerClient.class);
 
     @Inject
     public JtdsSqlServerClient(JdbcConnectorId connectorId, BaseJdbcConfig config,
