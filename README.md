@@ -8,7 +8,7 @@ The code is mainly inherited from [lotuc/presto-oracle](https://github.com/lotuc
 
 Create new properties file inside etc/catalog dir:
 
-    connector.name=jtds-sqlserver
+    connector.name=jtdssqlserver
     connection-url=jdbc:jtds:sqlserver://ip:port;databaseName=MYDBNAME;domain=MYDOMAIN;useNTLMv2=true;
     connection-user=myusername
     connection-password=mypassword
@@ -16,6 +16,7 @@ Create new properties file inside etc/catalog dir:
 ## Building Presto JTDS SQL Server JDBC Plugin
 
     gradle build
+    gradle copyToLib
 
 ## Plugin installation
 
@@ -24,9 +25,9 @@ First build the plugin.
 Then create a dir inside plugin dir called sqlserver. To make it easier you could copy mysql dir to sqlserver and remove the mysql-connector and prestodb-mysql jars. Finally put the prestodb-sqlserver in plugin/sqlserver folder. Here is the sptes:
 
     cd $PRESTODB_HOME
-    cp -r plugin/mysql plugin/jtds-sqlserver
+    cp -r plugin/mysql plugin/jtdssqlserver
     rm plugin/sqlserver/mysql-connector*
     rm plugin/sqlserver/presto-mysql*
-    cp $SQLSERVER_PLUGIN_REPO/lib/* plugin/jtds-sqlserver
-    cp $SQLSERVER_PLUGIN_REPO/build/libs/presto-jtds-sqlserver*.jar plugin/jtds-sqlserver
+    cp $SQLSERVER_PLUGIN_REPO/lib/* plugin/jtdssqlserver
+    cp $SQLSERVER_PLUGIN_REPO/build/libs/presto-jtdssqlserver*.jar plugin/jtdssqlserver
 
