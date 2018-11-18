@@ -1,4 +1,4 @@
-# Presto Sqlserver Plugin
+# Presto JTDS Sqlserver Plugin
 
 This is a plugin for Presto that allow you to use Sqlserver Jdbc Connection using the [jtds driver](http://jtds.sourceforge.net/) which supports some types of connections with SQL Server that the standard microsoft jdbc driver does not (e.g. domain logins).
 
